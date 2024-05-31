@@ -104,7 +104,8 @@ body{
 .hero-text button{
     background-color: var(--dark-green);
     color: var(--opaque-white);
-    font-size: 18px;
+    font-size: 16px;
+    text-align: center;
     border: none;
     border-radius: 80px;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
