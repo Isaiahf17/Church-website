@@ -10,6 +10,12 @@
     --opaque-white: #edecf2;
 
 }
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: var(--dark-green);
+  }
+}
+
 
 html{
     display: block;
