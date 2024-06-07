@@ -10,108 +10,159 @@
     --opaque-white: #edecf2;
 
 }
-/* 1200px / 16px = 75em */
-@media (max-width: 75em) {
-  html {
-    font-size: 60%;
-  }
+
+/* Base reset */
+*{
+    margin: 0;
+    padding: 0;
 }
 
-/* 980px / 16px = 61.25em */
-@media (max-width: 61.25em) {
-  html {
-    font-size: 58%;
-  }
+*,
+*::before,
+*::after{
+    box-sizing: inherit;
 }
 
-/* 460px / 16px = 28.75em */
-@media (max-width: 28.75em) {
-  html {
-    font-size: 55%;
-  }
-}
 html{
-    display: block;
+    box-sizing: border-box;
+
+    font-size: 62.5%;
+    scroll-behavior: smooth;
    
 }
 
+/* 1200px / 16px = 75em*/
+@media (max-width: 75em){
+    html{
+        font-size: 60%;
+    }
+}
+
+/* 980px / 16px = 61.25em*/
+@media (max-width: 75em){
+    html{
+        font-size: 58%;
+    }
+}
+
+/* 460px / 16px = 28.75em*/
+@media (max-width: 75em){
+    html{
+        font-size: 55%;
+    }
+}
+
 body{
-    display: block;
-    margin: 0;
     background-color: var(--dark-green);
+    font-family: 'Lato', Arial, sans-serif;
+    font-size: 1.8rem; /* 18px */
+    font-weight: 400;
+    line-height: 1.4;
+    color: var(--opaque-white);
 
 }
-.nav{
-    background-color: var(--dark-green);
-    overflow: hidden;
+
+ul{
+    list-style: none;
 }
-/* Style the links inside the navigation bar */
-.nav a {
-    float: left;
-    color: var(--opaque-white);
-    text-align: center;
-    padding: 14px 16px;
+
+a{
     text-decoration: none;
-    font-size: 17px;
-  }
+    color: var(--opaque-white);
+}
+
+
+/* Style the links inside the navigation bar */
+.nav{
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--dark-green);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+    z-index: 10;
+}
+
+.nav-list{
+    display: flex;
+    margin-right: 2rem;
+}
+
+.nav-list a{
+    display: block;
+    font-size: 2.2rem;
+    padding: 2rem;
+}
   
   /* Change the color of links on hover */
   .nav a:hover {
     background-color: var(--opaque-white);
     color: var(--dark-green);
   }
-  
-  /* Add a color to the active/current link */
-  .nav a.active {
-    background-color: var(--opaque-white);
-    color: var(--dark-green);
+
+  @media (max-width: 28.75em) {
+    .nav{
+        justify-content: center;
+    }
+    .nav-list{
+        margin: 0 1rem;
+    }
   }
 
 
 /*HERO INCLUDING CHURCH NAME AND LOGO
 */
 .hero-image{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     /* Using linear-gradient to add a darken background effect to image. This will make the text easier to read. */
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://i.postimg.cc/C5nJWzKR/church-background.png);
     /*Setting a specific height */
-    height: 800px;
+    width: 100%;
+    height: 100vh;
     /* Position and center the image to scale nicely on all screens */
-    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
-    top: 49px;
+    
 }
 .hero-text{
-    text-align: center;
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+   
+   /* font-size: 3rem; */
+    font-weight: 100;
+    font-style: normal;
     color: var(--opaque-white);
 }
 .hero-text h1{
-    font-size: 80px;
-    font-weight: bold;
+    font-size: 8rem;
+}
+.hero-text h1 span{
+    font-weight: 400;
+    font-size: 10rem;
+    color: var(--lighter-green);
 }
 .hero-text p{
-    font-size: 32px;
+    font-size: 3.2rem;
 }
 .hero-text p span{
-    font-weight: bold;
-    font-size: 40px;
+    font-weight: 800;
+    font-style: italic;
+    font-size: 4rem;
+    color: var(--lighter-green);
 }
 .hero-text button{
     background-color: var(--dark-green);
     color: var(--opaque-white);
-    font-size: 16px;
+    font-size: 1.6rem;
     text-align: center;
     border: none;
     border-radius: 80px;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
     width: 200px;
     height: 50px;
-    position: relative;
     bottom: 10px;
 }
 .hero-text button:hover{
@@ -125,16 +176,57 @@ body{
 /*PARAGRAPH SECTIONS BEGIN HERE
 */
 .about-section{
-    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10rem 2rem;
     background-color: var(--lighter-green);
+    
 }
-.about-section p{
-    padding: 20px 15px;
-    font-size: 38px;
-    line-height: 1.2;
+.about-section-header{
+    max-width: 640px;
+    margin: 0 auto 6rem auto;
+    border-bottom: 0.4rem solid #343434;
+    font-size: 6.4rem;
+}
+
+.about-section > p{
+    font-weight: 300;
+    font-size: 4rem;
 }
 
 /*Testimonial Section*/
+.testimonial-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 80vh;
+    padding: 2rem 1.3rem;
+    background: var(--dark-green);
+}
+
+@media (max-width: 38.75em){
+    .testimonial-section{
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+.testimonial-section-header{
+    font-size: 6.4rem;
+    font-style: oblique;
+    border-bottom: 0.4rem solid #343434;
+}
+@media (max-width: 25.75em) {
+    .testimonial-section-header > h2 {
+      font-size: 2rem;
+    }
+  }
+
 .testimonial{
     font-family: 'Lato', Arial, sans-serif;
     position: relative;
@@ -150,6 +242,7 @@ body{
     font-size: 20px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
 }
+
 .testimonial *{
     box-sizing: border-box;
 }
@@ -160,23 +253,11 @@ body{
 }
 .testimonial figcaption{
     position: absolute;
-    top: 65%;
+    top: 55%;
     bottom: 0;
     left: 0;
     right: 0;
     padding: 80px 10% 15%;
-}
-.testimonial figcaption:before{
-    font-family: 'FontAwesome';
-    content: "\201C";
-    position: absolute;
-    font-size: 170px;
-    opacity: 0.35;
-    font-style: normal;
-    transform: translateX(-50%);
-    top: 5%;
-    left: 50%;
-    bottom: 3%; 
 }
 .testimonial blockquote{
     padding: 0;
@@ -201,10 +282,25 @@ body{
     letter-spacing: 1px;
 }
 
+.testimonial:hover{
+    transition-timing-function:ease-in;
+    transition: 0.4s;
+    transform: scale(1.1);
+    z-index: 1;
+}
+
 
 /*Footer begins here*/
 
 
+
+footer{
+    background: #343434 ;
+    padding: 4rem 2rem;
+    text-align: center;
+    font-size: 2.8rem;
+    max-width: 100%;
+}
 
 footer p span{
     color: var(--opaque-white);
@@ -212,12 +308,13 @@ footer p span{
     font-weight: bold;
 }
 
-footer p{
-    text-align: center;
-    font-size: 28px;
+footer p a{
+    font-style: italic;
+    text-decoration: none;
 }
 
-footer p a{
-    text-decoration: none;
-    color: black;
+@media (max-width: 88.75em) {
+    footer{
+        flex-direction: column;
+    }
 }
