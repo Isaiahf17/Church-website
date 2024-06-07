@@ -35,7 +35,14 @@ html{
 @media (max-width: 75em){
     html{
         font-size: 60%;
-    }
+        }
+    *{
+        -webkit-transition: none !important;
+        -moz-transition: none !important;
+        -o-transition: none !important;
+        -ms-transition: none !important;
+        transition: none !important;
+        }
 }
 
 /* 980px / 16px = 61.25em*/
@@ -43,6 +50,13 @@ html{
     html{
         font-size: 58%;
     }
+    *{
+        -webkit-transition: none !important;
+        -moz-transition: none !important;
+        -o-transition: none !important;
+        -ms-transition: none !important;
+        transition: none !important;
+        }
 }
 
 /* 460px / 16px = 28.75em*/
@@ -50,6 +64,13 @@ html{
     html{
         font-size: 55%;
     }
+    *{
+        -webkit-transition: none !important;
+        -moz-transition: none !important;
+        -o-transition: none !important;
+        -ms-transition: none !important;
+        transition: none !important;
+        }
 }
 
 body{
